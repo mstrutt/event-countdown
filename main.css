@@ -27,6 +27,10 @@ body {
     }
 }
 
+.is-hidden {
+  display: none !important;
+}
+
 .countdown {
   margin: 0 auto;
   padding: 0 5%;
@@ -93,33 +97,43 @@ body {
 }
 
 .time-form__expandable {
+  border: 1px solid rgba(255, 255, 255, .3);
+  border-radius: 10px 0 0 10px;
   display: block;
   position: absolute;
   top: 100%;
   right: 0;
   width: max-content;
+  background-color: #20122e;
+  padding: 1em;
 }
 
-.is-hidden {
-  display: none !important;
+.time-form__list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
-/* form */
+.time-form__label {
+  display: block;
+  margin-bottom: .25em;
+}
 
-.time-form__start-time {
+.time-form__input {
   background: none;
   border: 0;
+  border-bottom: 1px solid;
   box-sizing: content-box;
   caret-color: #00bed0;
   color: #837b8b;
   color: currentColor;
   display: inline-block;
+  font: inherit;
   font-size: 21px;
   font-weight: 700;
-  font: inherit;
   height: 1.1875em;
   line-height: 28px;
-  margin: 0;
+  margin: 0 0 1.25em;
   padding: 6px 0 7px;
   -webkit-tap-highlight-color: transparent;
   vertical-align: middle;

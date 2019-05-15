@@ -3,10 +3,10 @@
   const timeForm = document.getElementById('time-form');
   const timeEl = document.getElementById('countdown-time');
   const timeSpans = timeEl.getElementsByTagName('span');
-
   const toggleButton = document.getElementById('toggle-button');
   const countdownEl = document.getElementById('countdown');
   const showTimeEl = document.getElementById('show-time');
+  const messageEl = document.getElementById('message');
 
   const msInSecond = 1000;
   const msInMinute = 60 * msInSecond;
@@ -20,6 +20,7 @@
     const today = new Date();
     startTime = new Date(`${today.toDateString()}, ${timeInput.value}`);
     timeEl.setAttribute('datetime', startTime.toISOString());
+    showTimeEl.textContent = messageEl.value;
     countdownEl.classList.remove(hiddenClass);
     showTimeEl.classList.add(hiddenClass);
   }
