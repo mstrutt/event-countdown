@@ -5,10 +5,14 @@
   const timeSpans = timeEl.getElementsByTagName('span');
 
   const toggleButton = document.getElementById('toggle-button');
+  const countdownEl = document.getElementById('countdown');
+  const showTimeEl = document.getElementById('show-time');
 
   const msInSecond = 1000;
   const msInMinute = 60 * msInSecond;
   const msInHour = 60 * msInMinute;
+
+  const hiddenClass = 'is-hidden';
 
   let startTime;
 
@@ -16,6 +20,8 @@
     const today = new Date();
     startTime = new Date(`${today.toDateString()}, ${timeInput.value}`);
     timeEl.setAttribute('datetime', startTime.toISOString());
+    countdownEl.classList.remove(hiddenClass);
+    showTimeEl.classList.add(hiddenClass);
   }
 
   function formatTime(number) {
@@ -28,6 +34,13 @@
   function tick() {
     const now = Date.now();
     const msToStart = startTime - now;
+
+    if (msToStart < 1) {
+      countdownEl.classList.add(hiddenClass);
+      showTimeEl.classList.remove(hiddenClass);
+      return;
+    }
+
     const hoursToStart = Math.floor(msToStart / msInHour);
     const minutesToStart = Math.floor((msToStart % msInHour) / msInMinute);
     const secondsToStart = Math.floor((msToStart % msInMinute) / msInSecond);
@@ -43,7 +56,7 @@
   }
 
   function toggleSettings() {
-    timeForm.classList.toggle('is-hidden')
+    timeForm.classList.toggle(hiddenClass);
   }
 
   function bindEvents() {
