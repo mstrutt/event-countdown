@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Countdown timer</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:700|Work+Sans:400,700,800" rel="stylesheet">
+    <link href="./main.css" rel="stylesheet">
+  </head>
+  <body>
+    <form class="time-form" id="time-form">
+      <input id="start-time" type="datetime" value="2019-05-15T13:30:00">
+      <button type="button">Update</button>
+    </form>
+    <div class="countdown">
+      <h1 class="countdown__title font-h1" contenteditable>The event will start&nbsp;in</h1>
+      <time class="countdown__time" id="countdown-time" datetime="">
+        <span>0</span>
+        <span>0</span>
+        <span>:</span>
+        <span>0</span>
+        <span>0</span>
+        <span>:</span>
+        <span>0</span>
+        <span>0</span>
+      </time>
+    </div>
+    <script src="./main.js"></script>
+  </body>
+</html>
