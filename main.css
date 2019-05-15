@@ -66,3 +66,76 @@ body {
   top: 0;
   right: 0;
 }
+
+.time-form__toggle-button {
+  background-color: transparent;
+  border: 0 none;
+  color: inherit;
+  cursor: pointer;
+  height: 80px;
+  margin: 0;
+  opacity: 0;
+  padding: 10px;
+  transition: opacity .1s;
+  width: 80px;
+}
+
+.time-form__toggle-button:hover,
+.time-form__toggle-button:focus {
+  opacity: .7;
+}
+
+.time-form__settings-icon {
+  display: block;
+  fill: currentColor;
+  height: 60px;
+  width: 60px;
+}
+
+.time-form__expandable {
+  display: block;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: max-content;
+}
+
+.is-hidden {
+  display: none !important;
+}
+
+/* form */
+
+.time-form__start-time {
+  background: none;
+  border: 0;
+  box-sizing: content-box;
+  caret-color: #00bed0;
+  color: #837b8b;
+  color: currentColor;
+  display: inline-block;
+  font-size: 21px;
+  font-weight: 700;
+  font: inherit;
+  height: 1.1875em;
+  line-height: 28px;
+  margin: 0;
+  padding: 6px 0 7px;
+  -webkit-tap-highlight-color: transparent;
+  vertical-align: middle;
+}
+
+.time-form__update-button {
+  align-items: center;
+  background-color: #00bed0;
+  border-radius: 40px;
+  border: 0 none;
+  color: #41354d;
+  font-size: 13px;
+  font-weight: 700;
+  height: 60px;
+  margin-right: 0px;
+  padding: 0 45px;
+  text-align: center;
+  text-transform: lowercase;
+}

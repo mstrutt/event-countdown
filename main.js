@@ -4,6 +4,8 @@
   const timeEl = document.getElementById('countdown-time');
   const timeSpans = timeEl.getElementsByTagName('span');
 
+  const toggleButton = document.getElementById('toggle-button');
+
   const msInSecond = 1000;
   const msInMinute = 60 * msInSecond;
   const msInHour = 60 * msInMinute;
@@ -11,7 +13,8 @@
   let startTime;
 
   function setTime() {
-    startTime = new Date(timeInput.value);
+    const today = new Date();
+    startTime = new Date(`${today.toDateString()}, ${timeInput.value}`);
     timeEl.setAttribute('datetime', startTime.toISOString());
   }
 
@@ -39,14 +42,27 @@
     setInterval(tick, msInSecond);
   }
 
-  function init() {
-    setTime();
-    startCountdown();
+  function toggleSettings() {
+    timeForm.classList.toggle('is-hidden')
+  }
+
+  function bindEvents() {
     timeForm.addEventListener('submit', (e) => {
       e.preventDefault();
       setTime();
       tick();
-    })
+      toggleSettings();
+    });
+
+    toggleButton.addEventListener('click', () => {
+      toggleSettings();
+    });
+  }
+
+  function init() {
+    setTime();
+    startCountdown();
+    bindEvents();
   }
 
   init();
